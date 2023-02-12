@@ -1,0 +1,24 @@
+<div class="dashboard">
+    <form action="/api/user/register" class="add Addanimal"  method="post">
+        <div class="line1">
+            <input type="text" name="username" id="username" placeholder="username" required>
+            <select name="roll">
+                <option disabled selected value="role">role</option>
+                <option value="adminstrator">adminstrator</option>
+                <option value="amdin">admin</option>
+                <option value="dilivery boy">dilivery boy</option>
+            </select>
+            <input type="email" name="email" id="email" placeholder="email" required>
+        </div>
+        <div class="line2">
+            <input type="text" name="number" id="number" placeholder="number" required>
+            <input type="text" name="password" id="password" placeholder="password" required>
+                        <select name="isAdmin">
+                            <option disabled selected value="role">role</option>
+                            <option value="true">true</option>
+                            <option value="false">false</option>
+                        </select>
+            <input type="submit" value="submit" >
+        </div>
+    </form>
+</div>

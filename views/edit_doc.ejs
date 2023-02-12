@@ -1,0 +1,31 @@
+<div class="dashboard">
+    <form action="/api/docupdate/<%= _id %> " class="add Addanimal" enctype="multipart/form-data" method="post">
+        <div class="line1">
+            <input type="text" value="<%= english %> " name="english" id="english" placeholder="english" required>
+            <input type="text" value="<%= kurdish %> " name="kurdish" id="kurdish" placeholder="kurdish" required>
+            <input type="text" value="<%= arabic %> " name="arabic" id="arabic" placeholder="arabic" required>
+            <input type="text" value="<%= turkish %> " name="turkish" id="turkish" placeholder="turkish" required>
+            <input type="text" value="<%= badini %> " name="badini" id="badini" placeholder="badini" required>
+            <select name="gender">
+                <option disabled selected value="gender"><%=gender %></option>
+                <option value="men">men</option>
+                <option value="woman">woman</option>
+            </select>
+            <input type="file" name="myFile" id="myFile" multiple required>
+        </div>
+        <div class="line2">
+            <textarea type="text" name="descriptionenglish" id="description in english"
+                placeholder="description in english" required><%=descriptionenglish %></textarea>
+            <textarea type="text" name="descriptionkurdish" id="descriptionkurdish" placeholder="descriptionkurdish"
+                required><%= descriptionkurdish%></textarea>
+            <textarea type="text" name="descriptionarabic" id="descriptionarabic" placeholder="descriptionarabic"
+                required><%= descriptionarabic%></textarea>
+            <textarea type="text" name="descriptionbadini" id="descriptionbadini" placeholder="descriptionbadini"
+                required><%=descriptionbadini %></textarea>
+            <textarea type="text" name="descriptionturkish" id="descriptionturkish" placeholder="descriptionturkish"
+                required><%=descriptionturkish %></textarea>
+            <input type="text" value="<%= location %> " name="location" id="location" placeholder="location" required>
+            <input type="submit" value="submit">
+        </div>
+    </form>
+</div>

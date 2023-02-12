@@ -1,0 +1,108 @@
+<div class="dashboard">
+    <!-- <div class="nav">
+        <input class="search sdashboard" type="search" name="search" id="search" placeholder="Seach...">
+        <div class="profile">
+            <img src="./images/image/cute-little-dog-isolated-yellow.jpg" alt="" srcset="">
+            <h3>Rayan</h3>
+        </div> -->
+    <!-- </div> -->
+    <div class="overview">
+        <h1>Overview</h1>
+    </div>
+    <div class="boxs">
+        <div class="dbox box">
+            <div class="dbnav">
+                <div class="nameLogo">
+                    <p>Products</p>
+                </div>
+                <h2>14</h2>
+            </div>
+            <div class="dbmain">
+                <h2>$4520</h2>
+                <p>sales</p>
+            </div>
+        </div>
+        <div class="dbox box">
+            <div class="dbnav">
+                <div class="nameLogo">
+                    <p>Products</p>
+                </div>
+                <h2>14</h2>
+            </div>
+            <div class="dbmain">
+                <h2>$4520</h2>
+                <p>sales</p>
+            </div>
+        </div>
+        <div class="dbox box">
+            <div class="dbnav">
+                <div class="nameLogo">
+                    <p>Products</p>
+                </div>
+                <h2>14</h2>
+            </div>
+            <div class="dbmain">
+                <h2>$4520</h2>
+                <p>sales</p>
+            </div>
+        </div>
+        <div class="dbox box">
+            <div class="dbnav">
+                <div class="nameLogo">
+                    <p>Products</p>
+                </div>
+                <h2>14</h2>
+            </div>
+            <div class="dbmain">
+                <h2>$4520</h2>
+                <p>sales</p>
+            </div>
+        </div>
+    </div>
+    <div class="chartTop">
+        <div class="canva">
+            <div class="boxs-product">
+                <table>
+                    <thead></thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Image</th>
+                        <th>name</th>
+                        <th>stock</th>
+                        <th>price</th>
+                        <th>edit</th>
+                        <th>delete</th>
+                    </tr>
+                    <% products.forEach((product)=> { %>
+                        <tr>
+                            <td>
+                                <%= product._id %>
+                            </td>
+                            <td><img class='smallimg' src="<%= product.image %>"></td>
+                            <td>
+                                <%= product.nameEnglish %>
+                            </td>
+                            <td>
+                                <%= product.stock %>
+                            </td>
+                            <td>
+                                <%= product.price %>
+                            </td>
+                            <th><a href="/api/products/<%=product._id%>">edit</a></th>
+                            <th>
+                                <form action="/api/products/delete/<%=product._id%>" method="delete"><input type="submit"
+                                        value="delete"></form>
+                            </th>
+                        </tr>
+                        <% }) %>
+                </table>
+            </div>
+        </div>
+        <!-- <div class="Dpopulars">
+            <div class="populers">
+                <img src="" alt="">
+                
+            </div>
+        </div> -->
+    </div>
+</div>

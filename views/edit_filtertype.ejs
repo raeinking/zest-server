@@ -1,0 +1,13 @@
+<div class="dashboard">
+    <form action="/api/filtertypeupdate/<%= _id %> " class="add Addanimal" enctype="multipart/form-data" method="post">
+        <div class="line1">
+            <input type="text" value="<%= english %> " name="english" id="english" placeholder="english" required>
+            <input type="text" value="<%= sorani %> " name="kurdish" id="sorani" placeholder="sorani" required>
+            <input type="text" value="<%= arabic %> " name="arabic" id="arabic" placeholder="arabic" required>
+            <input type="text" value="<%= turkish %> " name="turkish" id="turkish" placeholder="turkish" required>
+            <input type="text" value="<%= badini %> " name="badini" id="badini" placeholder="badini" required>
+            <input type="file" name="myFile" id="myFile" multiple required>
+            <input type="submit" value="submit">
+        </div>
+    </form>
+</div>

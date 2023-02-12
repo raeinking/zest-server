@@ -1,0 +1,47 @@
+<div class="dashboard">
+    <form method="post" action="/api/update/<%= _id %> " class="add Addanimal" enctype="multipart/form-data">
+        <div id="line1" class="line1">
+            <input value="<%= nameEnglish %> " type="text" name="nameEnglish" id="name in english" placeholder="name in english" required>
+            <input value="<%= price %> "type="text" name="price" id="price" placeholder="price" required>
+            <input value="<%= discountPrice %> "type="text" name="discountPrice" id="discount price" placeholder="discount price" required>
+            <input value="<%= packegeCount %> " type="text" name="packegeCount" id="packeg" placeholder="سعر کامل" required>
+        </div>
+        <div class="line2">
+            <input value="<%= stock %> " type="text" name="stock" id="stock" placeholder="رقم موبایل" required>
+            <!-- <input src="/files/myFile-1676115667468.jpeg" type="file" name="myFile" id="myFile" multiple required> -->
+            <input src="http://192.168.100.144:5000/files/myFile-1676115703934.jpeg" type="file" name="myFile" id="myFile" multiple required>
+            <img class="smallimg" src="http://192.168.100.144:5000/files/myFile-1676115703934.jpeg">
+            <select name="catagory">
+                <option disabled selected value="sub catalog"><%= catagory %></option>
+                <option value="lalav city">lalav city</option>
+                <option value="nova towers">nova towers</option>
+                <option value="star towers">star towers</option>
+                <option value="north holland">north holland</option>
+                <option value="rueal pavilion">rueal pavilion</option>
+                <option value="majidi view">majidi view</option>
+                <option value="qaywan">qaywan</option>
+                <option value="naz city">naz city</option>
+                <option value="ruby towers">ruby towers</option>
+                <option value="rona towers">rona towers</option>
+                <option value="quatro">quatro</option>
+                <option value="zanyai towers">zanyai towers</option>
+                <option value="venus towers">venus towers</option>
+                <option value="pirl ">pirl</option>
+                <option value="tween towers">tween towers</option>
+                <option value="sun towers">sun towers</option>
+                <option value="sky towers">sky towers</option>
+                <option value="sky view">sky view</option>
+                <option value="asco">asco</option>
+                <option value="mnw towers">mnw towers</option>
+                <option value="aram village 2">aram village 2 </option>
+                <option value="remas city">remas city</option>
+                <option value="queen towers">queen towers</option>
+                <option value="gundi ispany">gundi ispany</option>
+                <option value="ganjan city">ganjan city</option>
+                <option value="white towers">white towers</option>
+                <option value="florence">florence</option>
+            </select>
+            <input type="submit" value="update">
+        </div>
+    </form>
+</div>

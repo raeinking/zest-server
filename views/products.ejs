@@ -1,0 +1,38 @@
+<div class="dashboard">
+    <!-- <div class="nav">
+        <input class="search sdashboard" type="search" name="search" id="search" placeholder="Seach...">
+        <div class="profile">
+            <img src="./images/image/cute-little-dog-isolated-yellow.jpg" alt="" srcset="">
+            <h3>Rayan</h3>
+        </div>
+    </div> -->
+    <div class="overview">
+        <h1>پرۆژەکانمان</h1>
+            <button class="button"> <a class="a" href="add_animal">زیادکردن</a></button>
+    </div>
+    <div class="boxs-product">
+        <table>
+            <thead></thead>
+            <tr>
+                <th>رسم</th>
+                <th>پرۆژە</th>
+                <th>رقم شوقە</th>
+                <th>متر</th>
+                <th>سعر متر</th>
+                <th>دەسکاری بکە</th>
+                <th>بسرەوە</th>
+            </tr>
+                <% products.forEach((product)=> { %>
+                <tr>
+                    <td><img class='smallimg' src="<%= product.image %>"></td>
+                    <td><%= product.catagory %></td>
+                    <td><%= product.nameEnglish %></td>
+                    <td><%= product.discountPrice %></td>
+                    <td><%= product.price %></td>
+                    <th><a href="/api/products/<%=product._id%>">دەسکاری</a></th>
+                    <th><a href="/api/products/delete/<%=product._id%>">رەشکردنەوە</a></th>
+                </tr>
+                <% }) %>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+<div class="dashboard">
+    <form action="/api/posts/product" class="add Addanimal" enctype="multipart/form-data" method="post">
+        <div class="line1">
+            <input type="text" name="nameEnglish" id="name in english" placeholder="رقم شوقە" required>
+            <!-- <input type="text" name="nameSorany" id="name in kurdish" placeholder="name in kurdish" required>
+            <input type="text" name="nameArabic" id="name in arabic" placeholder="name in arabic" required>
+            <input type="text" name="nameTurkish" id="name in turkish" placeholder="name in turkish" required>
+            <input type="text" name="nameBadini" id="name in badini" placeholder="name in badini" required> -->
+            <!-- <input type="checkbox" name="related product" id=""> -->
+            <input type="text" name="price" id="price" placeholder="سعر متر" required>
+            <input type="text" name="discountPrice" id="discount price" placeholder="متر" required>
+            <input type="text" name="packegeCount" id="packeg" placeholder="سعر کامل" required >
+        </div>
+        <div class="line2">
+            <input type="text" name="stock" id="stock" placeholder="رقم موبایل" required >
+            <select name="catagory">
+                <option disabled selected value="sub catalog">پرۆژەی</option>
+                <option value="lalav city">lalav city</option>
+                <option value="wet food">nova towers</option>
+                <option value="star towers">star towers</option>
+                <option value="north holland">north holland</option>
+                <option value="rueal pavilion">rueal pavilion</option>
+                <option value="majidi view">majidi view</option>
+                <option value="qaywan">qaywan</option>
+                <option value="naz city">naz city</option>
+                <option value="ruby towers">ruby towers</option>
+                <option value="rona towers">rona towers</option>
+                <option value="quatro">quatro</option>
+                <option value="zanyai towers">zanyai towers</option>
+                <option value="venus towers">venus towers</option>
+                <option value="pril">pril</option>
+                <option value="tween towers">tween towers</option>
+                <option value="sun towers">sun towers</option>
+                <option value="sky towers">sky towers</option>
+                <option value="sky view">sky view</option>
+                <option value="asco">asco</option>
+                <option value="mnw towers">mnw towers</option>
+                <option value="aram village 2">aram village 2 </option>
+                <option value="remas city">remas city</option>
+                <option value="queen towers">queen towers</option>
+                <option value="gundi ispany">gundi ispany</option>
+                <option value="ganjan city">ganjan city</option>
+                <option value="white towers">white towers</option>
+                <option value="florence">florence</option>
+                <input type="file" name="myFile" id="myFile" multiple required>
+            </select>
+            <!-- <input type="text" name="capacity" id="capacity" placeholder="capacity"  > -->
+            <!-- <input type="text" name="unity" id="unity" placeholder="unity ex ( g , kg , ml , l )" required > -->
+            <!-- <select>
+                <option disabled selected value="brand">brand</option>
+                <option value="gold">gold</option>
+                <option value="fanos">fanos</option>
+                <option value="testy">testy</option>
+            </select> -->
+            <input type="submit" value="send">
+        </div>
+    </form>
+</div>

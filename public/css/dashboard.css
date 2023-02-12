@@ -1,0 +1,153 @@
+body {
+    position: relative;
+}
+
+main {
+    display: flex;
+}
+a {
+    color: rgb(0, 0, 0);
+}
+.a {
+    color: #ffff;
+}
+.button {
+    background-color: rgba(100, 219, 71, 0.634);
+    border: 1px solid black;
+    padding: 6px 15px;
+    border-radius: 5px;
+    color: black;
+}
+
+.dashboard {
+    background-color:rgb(242,246,248);
+    width:calc(100vw - 230px);
+    margin-left:-20px;
+     min-height: 900px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    box-shadow: 1px 9px 23px 5px rgba(0, 0, 0, 0.42);
+        -webkit-box-shadow: 1px 9px 23px 5px rgba(0, 0, 0, 0.42);
+        -moz-box-shadow: 1px 9px 23px 5px rgba(0, 0, 0, 0.42);
+}
+.dashboard .nav {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.search {
+    outline: none;
+    border: none;
+    width: 70%;
+    height: 49px;
+    padding: 15px 10px;
+    margin-left:2.5%;
+    border-radius: 10px;
+    box-shadow: 1px 9px 23px 5px rgba(0, 0, 0, 0.42);
+    -webkit-box-shadow: 1px 9px 23px 5px rgba(0, 0, 0, 0.42);
+    -moz-box-shadow: 1px 9px 23px 5px rgba(0, 0, 0, 0.42);
+} 
+.dashboard .profile {
+    width: 20%;
+    height: 45px;
+    margin-left: 2.5%;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 1px 9px 23px 5px rgba(0, 0, 0, 0.42);
+    -webkit-box-shadow: 1px 9px 23px 5px rgba(0, 0, 0, 0.42);
+    -moz-box-shadow: 1px 9px 23px 5px rgba(0, 0, 0, 0.42);
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+    max-width:200px;
+}
+.profile:hover {
+    transform: scale(1.1);
+}
+
+.profile img {
+    width:40px;
+    height:40px;
+    border-radius:100%;
+    margin: 0 10px;
+}
+
+.overview {
+    padding: 1rem 2.5%;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.boxs {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.box {
+    background-color:white;
+    padding: 15px 2.5%;
+    min-width: 25px;
+    max-width:175px;
+    width: 30%;
+    margin: 0 5px;
+    border-radius: 15px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+}
+.box:hover {
+    transform: scale(1.1)
+}
+.dbnav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.dbmain {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.chartTop {
+    padding: 15px 2.5%;
+    width:100%;
+    display: flex;
+}
+.canva {
+    width:70%;
+    height:100%
+}
+#myChart {
+    background-color:white;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+.Dpopulars {
+    background-color: #ffff;
+    width: 25%;
+    padding: 0 2.5%;
+    margin: 0 2.5%;
+    border-radius: 25px;
+}
+
+.a {
+    color: black;
+}
+
+.smallimg {
+    width:80px;
+    height: 100%;
+}
+
+

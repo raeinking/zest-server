@@ -1,0 +1,44 @@
+<div class="dashboard">
+    <div class="nav">
+        <input class="search sdashboard" type="search" name="search" id="search" placeholder="Seach...">
+        <div class="profile">
+            <img src="./images/image/cute-little-dog-isolated-yellow.jpg" alt="" srcset="">
+            <h3>Rayan</h3>
+        </div>
+    </div>
+    <div class="overview">
+        <h1>Adminstator</h1>
+        <button><a class="a" href="add_admin">Add admin</a></button>
+    </div>
+    <div class="boxs-product">
+        <table>
+            <thead></thead>
+            <tr>
+                <th>id</th>
+                <th>roll</th>
+                <th>username</th>
+                <th>number</th>
+                <th>email</th>
+            </tr>
+            <% products.forEach((product)=> { %>
+                <tr>
+                    <td>
+                        <%= product._id %>
+                    </td>
+                    <td>
+                        <%= product.roll %>
+                    </td>
+                    <td>
+                        <%= product.username %>
+                    </td>
+                    <td>
+                        <%= product.number %>
+                    </td>
+                    <td>
+                        <%= product.email %>
+                    </td>
+                </tr>
+                <% }) %>
+        </table>
+    </div>
+</div>
