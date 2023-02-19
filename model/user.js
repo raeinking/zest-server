@@ -3,27 +3,30 @@ const AdminSchema = new mongoose.Schema({
   username: {
     type: String
   },
-  email: {
-    type: String,
-    unique: true
-  },
   number: {
     type: String,
-    required: true,
-    unique: true
   },
-  password: {
+  clientname: {
     type: String,
-    required: true
   },
-  roll : {
+  level: {
     type: String,
-    default: 'user'
   },
-    createdAt: {
-    type: Date,
-    default: Date.now,
+    date: {
+    type:String
+  },
+    place: {
+    type:String
+  },
+    project: {
+    type:String
+  },
+    type: {
+    type:String
+  },
+    call: {
+    type:String
   },
 });
 
-module.exports = mongoose.model("user", AdminSchema)
+module.exports = mongoose.model("users", AdminSchema)

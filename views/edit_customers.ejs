@@ -1,0 +1,38 @@
+<div class="dashboard">
+    <form action="/api/posts/doc" class="add Addanimal" method="post">
+        <div class="line1">
+            <input value="<%= products.username %>" type="text" name="username" placeholder="ناو" required>
+            <input value="<%= products.number %>" type="text" name="number" id="kurdish" placeholder="رقم" required>
+            <input value="<%= products.clientname %>" type="text" name="clientname" id="arabic" placeholder="مبیعات" required>
+            <input value="<%= products.date %>" type="date" name="date" id="badini" placeholder="کات" required>
+            <select name="level">
+                <option disabled selected value="<%= products.level %>"><%= products.level %></option>
+                <option value="پرساری کرد">پرساری کرد</option>
+                <option value="داتە موضف">داتە موضف</option>
+                <option value="عەزی لیبو">عەزی لیبو</option>
+                <option value="مامەلەی کرد">مامەلەی کرد</option>
+                <option value="کری">کری</option>
+                <option value="نەی کری">نەی کری</option>
+            </select>
+        </div>
+        <div class="line2">
+            <input value="<%= products.place %>" type="text" name="place" placeholder="شوین" required>
+            <select name="type">
+                <option disabled selected value="<%= products.type %>"><%= products.type %></option>
+                <option value="ستودیو">ستودیو</option>
+                <option value="1 + 1">1 + 1</option>
+                <option value="1 + 2">1 + 2</option>
+                <option value="1 + 3">1 + 3</option>
+                <option value="1 + 4">1 + 4</option>
+                <option value="1 + 5">1 + 5</option>
+                <option value="1 + 6">1 + 6</option>
+            </select>
+            <select name="call">
+                <option disabled selected value="<%= products.call %>"><%= products.call %></option>
+                <option value="رسالە">رسالە</option>
+                <option value="تەلەفون">تەلەفون</option>
+            </select>
+            <input type="submit" value="ناردن">
+        </div>
+    </form>
+</div>

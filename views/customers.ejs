@@ -8,21 +8,25 @@
     </div>
     <div class="overview">
         <h1>Costumer</h1>
+        <button><a href="/add_customers">زیادکردن</a></button>
     </div>
     <div class="boxs-product">
         <table>
             <thead></thead>
             <tr>
-                <th>id</th>
-                <th>username</th>
-                <th>number</th>
-                <th>email</th>
+                <th>ناو</th>
+                <th>رقم</th>
+                <th>مبیعات</th>
+                <th>شوین</th>
+                <th>مشروع</th>
+                <th>نوع شوقە</th>
+                <th>نوع التواصل</th>
+                <th>ئاست</th>
+                <th>کات</th>
+                <th>دەستکاری کردن</th>
             </tr>
             <% products.forEach((product)=> { %>
                 <tr>
-                    <td>
-                        <%= product._id %>
-                    </td>
                     <td>
                         <%= product.username %>
                     </td>
@@ -30,8 +34,27 @@
                         <%= product.number %>
                     </td>
                     <td>
-                        <%= product.email %>
+                        <%= product.clientname %>
                     </td>
+                    <td>
+                        <%= product.place %>
+                    </td>
+                    <td>
+                        <%= product.project %>
+                    </td>
+                    <td>
+                        <%= product.type %>
+                    </td>
+                    <td>
+                        <%= product.call %>
+                    </td>
+                    <td>
+                        <%= product.level %>
+                    </td>
+                    <td>
+                        <%= product.date %>
+                    </td>
+                    <th><a href="/api/users/<%=product._id%>">edit</a></th>
                 </tr>
                 <% }) %>
         </table>

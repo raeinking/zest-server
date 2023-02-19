@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const reklamSchema = new mongoose.Schema({
-  image: {
+  project: {
     type: String
   },
   createdAt: {

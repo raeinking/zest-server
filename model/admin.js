@@ -3,15 +3,13 @@ const AdminSchema = new mongoose.Schema({
   username: {
     type: String
   },
-  // email: {
-  //   type: String,
-  //   unique: true
-  // },
-  // number: {
-  //   type: String,
-  //   required: true,
-  //   unique: true
-  // },
+  email: {
+    type: String,
+  },
+  number: {
+    type: String,
+    required: true,
+  },
   password: {
     type: String,
     required: true

@@ -1,35 +1,18 @@
 <div class="dashboard">
-    <div class="nav">
-        <input class="search sdashboard" type="search" name="search" id="search" placeholder="Seach...">
-        <div class="profile">
-            <img src="./images/image/cute-little-dog-isolated-yellow.jpg" alt="" srcset="">
-            <h3>Rayan</h3>
-        </div>
-    </div>
     <div class="overview">
-        <h1>Reklam</h1>
-        <button><a class="a" href="add_reklam">Add Reklam</a></button>
+        <h1>مشروعەکان</h1>
+        <button><a class="a" href="add_reklam">زیادکردن</a></button>
     </div>
 <div class="boxs-product">
     <table>
         <thead></thead>
         <tr>
-            <th>id</th>
-            <th>Image</th>
-            <th>create at</th>
-            <th>edit</th>
-            <th>delte</th>
+            <th>مشروع</th>
+            <th>رەشکردنەوە</th>
         </tr>
         <% products.forEach((product)=> { %>
             <tr>
-                <td>
-                    <%= product._id %>
-                </td>
-                <td><img class='smallimg' src="<%= product.image %>"></td>
-                <td>
-                    <%= product.createdAt %>
-                </td>
-                <th><a href="/api/reklam/get/<%=product._id%>">edit</a></th>
+                <th><%=product.project%></th>
                 <th>
                     <form action="/api/reklam/delete/<%=product._id%>"><input type="submit" value="delete"></form>
                 </th>

@@ -4,20 +4,28 @@ const { createError } = require( "../utils/error.js")
 const jwt = require( "jsonwebtoken")
 
 const register = async (req, res, next) => {
-  // try {
-  //   const salt =await bcrypt.genSaltSync(10);
-  //   const hash =await bcrypt.hashSync(req.body.password, salt);
+  try {
+    const salt =await bcrypt.genSaltSync(10);
+    const hash =await bcrypt.hashSync(req.body.password, salt);
 
-  //   const newUser =  new User({
-  //     ...req.body,
-  //     password: hash,
-  //   });
+    const newUser =  new User({
+      ...req.body,
+      password: hash,
+    });
 
-  //   await newUser.save()
-  //   res.redirect("/adminstrators")
-  // } catch (err) {
-  //   next(err);
-  // }
+    await newUser.save()
+    res.redirect("/adminstrators")
+  } catch (err) {
+    next(err);
+  }
+};
+const Delete = async (req, res) => {
+  try {
+    await User.findByIdAndDelete(req.params.id);
+    res.redirect(req.get('referer'));
+  } catch (err) {
+    res.send('try again')
+  }
 };
 const login = async (req, res, next) => {
   try {
@@ -63,4 +71,4 @@ const getUsers = async (req,res,next)=>{
 }
 
 
-module.exports = { login , register , logout , getUsers }
+module.exports = { Delete,login , register , logout , getUsers }

@@ -14,22 +14,19 @@
         <table>
             <thead></thead>
             <tr>
-                <th>id</th>
-                <th>roll</th>
-                <th>username</th>
-                <th>number</th>
-                <th>email</th>
+                <th>ناو</th>
+                <th>رۆل</th>
+                <th>رقم</th>
+                <th>یمەیل</th>
+                <th>رەشکردنەوە</th>
             </tr>
             <% products.forEach((product)=> { %>
                 <tr>
                     <td>
-                        <%= product._id %>
+                        <%= product.username %>
                     </td>
                     <td>
                         <%= product.roll %>
-                    </td>
-                    <td>
-                        <%= product.username %>
                     </td>
                     <td>
                         <%= product.number %>
@@ -37,6 +34,9 @@
                     <td>
                         <%= product.email %>
                     </td>
+                    <th>
+                        <a href="/api/user/delete/<%=product._id%>">رەشکردنەوە</a>
+                    </th>
                 </tr>
                 <% }) %>
         </table>

@@ -29,6 +29,8 @@ var AAnimal  = require("./routes/AAnimal.js");
 var AFillter  = require("./routes/AFillter.js");
 var settings  = require("./routes/settings.js");
 var addanimal  = require("./routes/addanimal.js");
+var addcustomers  = require("./routes/add_customers");
+var editcustomers  = require("./routes/edit_customers");
 var editanimal  = require("./routes/edit_animal.js");
 var s  = require("./routes/add_doc.js");
 var r  = require("./routes/add_reklam.js");
@@ -101,12 +103,13 @@ app.get("/customers",verifyToken, customers);
 app.get("/orders",verifyToken, orders);
 app.get("/adminstrators", verifyToken,adminstrators);
 app.get("/delivery_boy",verifyToken ,delivery_boy);
-app.get("/reklam",verifyToken, reklam);
+app.get("/project",verifyToken, reklam);
 app.get("/doctors",verifyToken, doctors);
 app.get("/FBrand",verifyToken, FBrand);
 app.get("/AAnimals",verifyToken, AAnimal);
 app.get("/AFillter",verifyToken, AFillter);
 app.get("/add_filtertype",verifyToken, addFbrand);
+app.get("/add_customers",verifyToken, addcustomers);
 app.get("/inventory",verifyToken, inventory); 
 app.get("/settings",verifyToken, settings);
 app.get("/add_animal",verifyToken, addanimal);
@@ -114,7 +117,7 @@ app.get("/edit_animal/:id",verifyToken, editanimal);
 app.get("/edit_reklam/:id",verifyToken, reklam_edit);
 app.get("/add_doc",verifyToken, s);
 app.get("/add_reklam",verifyToken, r);
-app.get("/add_admin",verifyToken ,admin);
+app.get("/add_admin" ,admin);
 app.get("/add_Fbrand",verifyToken ,addFbrand);
 app.get("/login", logins);
 
@@ -127,9 +130,6 @@ app.use('/api/reklam', reklamcrud);
 app.use('/api/doc', doc);
 app.use('/api/brand', brand);
 app.use('/api/filtertype', filtertype);
-app.use('/*', (req, res) => {
-  res.send('page not found');
-});
 
 //////// ALL POSTS //////////////
 const ProductSchema = require('./model/postProduct')
@@ -216,24 +216,20 @@ app.post('/api/brandupdate/:id', upload.single('myFile'),async (req, res) => {
     fs.unlinkSync('./public/'+req.file.filename)
   }
 });
-app.post('/api/posts/doc', upload.single('myFile'), (req, res) => {
+app.post('/api/posts/doc', (req, res) => {
   if (req.cookies.access_token) {
-    const newFile = doctorSchema.create({
-    image: req.file.filename,
-    english: req.body.english,
-    kurdish: req.body.kurdish,
-    arabic: req.body.arabic,
-    turkish: req.body.turkish,
-    badini: req.body.badini,
-    gender: req.body.gender,
-    descriptionenglish: req.body.descriptionenglish,
-    descriptionkurdish: req.body.descriptionkurdish,
-    descriptionarabic: req.body.descriptionarabic,
-    descriptionbadini: req.body.descriptionbadini,
-    descriptionturkish: req.body.descriptionturkish,
-    location: req.body.location,
+    const newFile = UserSchema.create({
+    username: req.body.username,
+    number: req.body.number,
+    clientname: req.body.clientname,
+    level: req.body.level,
+    date: req.body.date,
+    place: req.body.place,
+    project: req.body.project,
+    type: req.body.type,
+    call: req.body.call,
     });
-    res.status(200).redirect('/doctors');
+    res.status(200).redirect('/customers');
   } else {
     res.status(200).json('need admin')
     fs.unlinkSync('./public/'+req.file.filename)
@@ -258,9 +254,9 @@ app.post('/api/posts/filtertype', upload.single('myFile'), (req, res) => {
 app.post('/api/posts/reklam', upload.single('myFile'), (req, res) => {
   if (req.cookies.access_token) {
     const newFile = reklamSchema.create({
-    image: req.file.filename,
+    project: req.body.project,
     });
-    res.redirect('/reklam')
+    res.redirect('/project')
   } else {
     res.status(200).json('need admin')
     fs.unlinkSync('./public/'+req.file.filename)
@@ -334,9 +330,6 @@ app.post('/api/posts/admin', (req, res) => {
   if (req.cookies.access_token) {
     const newFile =  UserSchema.create({
     username: req.body.name,
-    roll: req.body.roll,
-    email: req.body.email,
-    number: req.body.number,
     password: req.body.password,
     });
     res.status(200).json({
@@ -358,8 +351,6 @@ const edit_reklam = require("./routes/edit_reklam.js");
 mongoose.connect(process.env.Mongo)
     .then(() => console.log('mongodb connected'))
     .catch(err => console.log('error :' + err.message))
-
-
 /////////// SERVER /////////////
 app.listen(app.get("port"), function(req){
     console.log("Express server listening on port " + app.get("port"));
