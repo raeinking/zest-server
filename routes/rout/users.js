@@ -37,6 +37,13 @@ router.get("/user/:id",verifyUser, getUser);
 router.get("/all",getUsers);
 
 
+const Product = require("../../model/user")
+
+router.get("/:id",async (req , res) => {
+  const products = await Product.findById(req.params.id);
+  res.render('edit_customers', {products} )
+});
+
 
 
 module.exports = router;
