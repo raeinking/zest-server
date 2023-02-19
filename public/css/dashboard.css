@@ -21,14 +21,7 @@ a {
 
 .dashboard {
     background-color:rgb(242,246,248);
-    width:calc(100vw - 230px);
-    margin-left:-20px;
-     min-height: 900px;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-    box-shadow: 1px 9px 23px 5px rgba(0, 0, 0, 0.42);
-        -webkit-box-shadow: 1px 9px 23px 5px rgba(0, 0, 0, 0.42);
-        -moz-box-shadow: 1px 9px 23px 5px rgba(0, 0, 0, 0.42);
+    width:100vw;
 }
 .dashboard .nav {
     height: 80px;
