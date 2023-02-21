@@ -69,7 +69,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
   app.use(cookieParser());
   
-  const { verifyToken } = require('./utils/verifyToken')
+  const { verifyToken, verifyAdmin } = require('./utils/verifyToken')
   
   const multerStorage = multer.diskStorage({
   destination: (req, file, cb) => {

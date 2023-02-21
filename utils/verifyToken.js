@@ -27,9 +27,9 @@ const verifyUser = (req, res, next) => {
 const verifyAdmin = (req, res, next) => {
   verifyToken(req, res, next, () => {
     if (req.user.isAdmin) {
-      next();
+      console.log('login')
     } else {
-      return next(createError(403, "You are not authorized!"));
+      console.log('not admin')
     }
   });
 };

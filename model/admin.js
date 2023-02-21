@@ -20,7 +20,7 @@ const AdminSchema = new mongoose.Schema({
   },
   roll : {
     type: String,
-    default: 'user'
+    default: 'Employee'
   }
 });
 
