@@ -6,7 +6,7 @@
             <input value="<%= products.clientname %>" type="text" name="clientname" id="arabic" placeholder="مبیعات" required>
             <input value="<%= products.date %>" type="date" name="date" id="badini" placeholder="کات" required>
             <select name="level">
-                <option disabled selected value="<%= products.level %>"><%= products.level %></option>
+                <option selected value="<%= products.level %>"><%= products.level %></option>
                 <option value="پرساری کرد">پرساری کرد</option>
                 <option value="داتە موضف">داتە موضف</option>
                 <option value="عەزی لیبو">عەزی لیبو</option>
@@ -17,8 +17,9 @@
         </div>
         <div class="line2">
             <input value="<%= products.place %>" type="text" name="place" placeholder="شوین" required>
+            <input type="text" placeholder="پرۆژەی" value="<%= products.project %>" name="project">
             <select name="type">
-                <option disabled selected value="<%= products.type %>"><%= products.type %></option>
+                <option selected value="<%= products.type %>"><%= products.type %></option>
                 <option value="ستودیو">ستودیو</option>
                 <option value="1 + 1">1 + 1</option>
                 <option value="1 + 2">1 + 2</option>
@@ -28,7 +29,7 @@
                 <option value="1 + 6">1 + 6</option>
             </select>
             <select name="call">
-                <option disabled selected value="<%= products.call %>"><%= products.call %></option>
+                <option selected value="<%= products.call %>"><%= products.call %></option>
                 <option value="رسالە">رسالە</option>
                 <option value="تەلەفون">تەلەفون</option>
             </select>

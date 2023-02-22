@@ -16,7 +16,7 @@ const register = async (req, res, next) => {
     await newUser.save()
     res.redirect("/adminstrators")
   } catch (err) {
-    next(err);
+    res.send(alert(err.message))
   }
 };
 const Delete = async (req, res) => {
@@ -40,7 +40,7 @@ const login = async (req, res, next) => {
       return next(createError(400, "Wrong password or username!"));
 
     const token = jwt.sign(
-      { id: user.username, isAdmin: user.isAdmin , password: user.password},
+      { id: user.username, isAdmin: user.isAdmin , password: user.password ,roll : user.roll},
       process.env.JWT
     );
 

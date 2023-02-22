@@ -17,12 +17,7 @@
         </div>
         <div class="line2">
             <input type="text" name="place" placeholder="شوین" required>
-            <select name="project">
-                <option disabled selected value="پرۆژە">پرۆژە</option>
-                    <% products.forEach((ech)=> { %>
-                        <option value="<%= ech.project %>" ><%= ech.project %></option>
-                    <% }) %>
-            </select>
+            <input type="text" placeholder="پرۆژەی" name="project">
             <select name="type">
                 <option disabled selected value="جەند غورفەیە">جەند غورفەیە</option>
                 <option value="ستودیو">ستودیو</option>
