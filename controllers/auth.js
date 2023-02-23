@@ -16,7 +16,7 @@ const register = async (req, res, next) => {
     await newUser.save()
     res.redirect("/adminstrators")
   } catch (err) {
-    res.send(alert(err.message))
+    res.send('have an error')
   }
 };
 const Delete = async (req, res) => {
@@ -30,25 +30,25 @@ const Delete = async (req, res) => {
 const login = async (req, res, next) => {
   try {
     const user = await User.findOne({ username: req.body.username });
-    if (!user) return next(createError(404, "User not found!"));
+    if (!user) return res.render('login');
 
     const isPasswordCorrect = await bcrypt.compare(
       req.body.password,
       user.password
     );
     if (!isPasswordCorrect)
-      return next(createError(400, "Wrong password or username!"));
+      res.render('login');
+    const expiresIn = 60 * 60 * 24;
+
 
     const token = jwt.sign(
       { id: user.username, isAdmin: user.isAdmin , password: user.password ,roll : user.roll},
-      process.env.JWT
+    process.env.JWT , { expiresIn }
     );
 
     const { password, isAdmin, ...otherDetails } = user._doc;
     res
-      .cookie("access_token", token, {
-        httpOnly: true,
-      })
+      .cookie("access_token", token , {expiresIn})
       .status(200)
       .redirect('/user')
   } catch (err) {

@@ -1,3 +1,7 @@
 module.exports = (req, res) => {
-    res.render('add_admin')
+    if (req.user.roll === 'Admin') {
+        res.render('add_admin')
+    } else {
+        alert('You are not authorized to access this page')
+    }
 }

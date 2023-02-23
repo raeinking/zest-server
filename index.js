@@ -77,7 +77,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
   },
   filename: (req, file, cb) => {
     const ext = file.mimetype.split("/")[1];
-    cb(null, `files/${file.fieldname}-${Date.now()}.${ext}`);
+    cb(null, `files/${file.fieldname}-image.png${Date.now()}.${ext}`);
   },
 });
 
@@ -115,10 +115,10 @@ app.get("/settings",verifyToken, settings);
 app.get("/add_animal",verifyToken, addanimal);
 app.get("/edit_animal/:id",verifyToken, editanimal);
 app.get("/edit_reklam/:id",verifyToken, reklam_edit);
-app.get("/add_doc",verifyToken, s);
-app.get("/add_reklam",verifyToken, r);
-app.get("/add_admin" ,admin);
-app.get("/add_Fbrand",verifyToken ,addFbrand);
+// app.get("/add_doc",verifyToken, s);
+// app.get("/add_reklam",verifyToken, r);
+app.get("/add_admin" , verifyToken,admin);
+// app.get("/add_Fbrand",verifyToken ,addFbrand);
 app.get("/login", logins);
 
 
@@ -141,7 +141,7 @@ const filtertypeSchema = require('./model/filtertype')
 
 
 app.post('/api/posts/product', upload.single('myFile'), (req, res) => {
-  if (req.cookies.access_token) {
+  if (req.user.roll === 'Admin' || req.user.role === 'Owner' || req.user.role === 'SuperAdmin') {
     const newFile = ProductSchema.create({
     image: req.file.filename,
     nameEnglish: req.body.nameEnglish,
@@ -293,22 +293,17 @@ app.post('/api/update/:id', upload.single('myFile'),async (req, res) => {
 });
 app.post('/api/docupdate/:id', upload.single('myFile'),async (req, res) => {
   if (req.cookies.access_token) {
-    const newFile = await doctorSchema.findByIdAndUpdate({_id : req.params.id},{
-    image: req.file.filename,
-    english: req.body.english,
-    kurdish: req.body.kurdish,
-    arabic: req.body.arabic,
-    turkish: req.body.turkish,
-    badini: req.body.badini,
-    gender: req.body.gender,
-    descriptionenglish: req.body.descriptionenglish,
-    descriptionkurdish: req.body.descriptionkurdish,
-    descriptionarabic: req.body.descriptionarabic,
-    descriptionbadini: req.body.descriptionbadini,
-    descriptionturkish: req.body.descriptionturkish,
-    location: req.body.location,
+    const newFile = await UserSchema.findByIdAndUpdate({_id : req.params.id},{
+    username: req.body.username,
+    number: req.body.number,
+    clientname: req.body.clientname,
+    date: req.body.date,
+    level: req.body.level,
+    place: req.body.place,
+    type: req.body.type,
+    call: req.body.call,
   });
-    res.status(200).redirect('/doctors');
+    res.status(200).redirect('/customers');
   } else {
     res.status(200).json('need admin')
     fs.unlinkSync('./public/'+req.file.filename)
